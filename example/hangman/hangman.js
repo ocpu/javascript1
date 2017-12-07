@@ -6,7 +6,11 @@ window.Hangman = (function () {
 
     var hangman = {
 
-        // Get all elements as their id
+        /** 
+         * Get all elements as their id
+         * 
+         * @type {Object.<string,SVGGElement>}
+         */
         "partAsElement": {
             "hill": document.getElementById('hang_hill'),
             "gallow": document.getElementById('hang_construction'),
@@ -19,7 +23,11 @@ window.Hangman = (function () {
             "head": document.getElementById('hang_head')
         },
 
-        // Create an array with all valid parts
+        /**
+         * Create an array with all valid parts
+         * 
+         * @type {string[]}
+         */
         "validParts": [
             "hill",
             "gallow",
@@ -36,9 +44,9 @@ window.Hangman = (function () {
         /**
          * Check if part a valid part, writes error message to console if the part is invalid.
          *
-         * @param string part Name of the part to check.
+         * @param {string} part Name of the part to check.
          *
-         * @returns boolean true if valid part, else false.
+         * @returns {boolean} true if valid part, else false.
          */
         "isValid": function (part) {
             if (this.validParts.indexOf(part) === -1) {
@@ -53,9 +61,9 @@ window.Hangman = (function () {
         /**
          * Hide a part.
          *
-         * @param string part Name of the part to hide.
+         * @param {string} part Name of the part to hide.
          *
-         * @returns void.
+         * @returns {void} Nothing.
          */
         "hide": function (part) {
             if (this.isValid(part)) {
@@ -68,9 +76,9 @@ window.Hangman = (function () {
         /**
          * Show a part.
          *
-         * @param string part Name of the part to show.
+         * @param {string} part Name of the part to show.
          *
-         * @returns void.
+         * @returns {void} Nothing.
          */
         "show": function (part) {
             if (this.isValid(part)) {
